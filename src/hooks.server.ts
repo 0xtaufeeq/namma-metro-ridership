@@ -1,7 +1,11 @@
 
 export async function handle({ event, resolve }) {
   const analyticsId = "blr-metro-ridership";
-  const baseUrl = "https://blr-metro-ridership.netlify.app";
+  // Get base URL from environment or use empty string for root
+  const baseUrl = import.meta.env.VERCEL_URL 
+    ? `https://${import.meta.env.VERCEL_URL}` 
+    : '';
+  
   if (import.meta.env.PROD && analyticsId) {
     event.locals.analyticsID = analyticsId;
     event.locals.baseUrl = baseUrl;
