@@ -256,12 +256,7 @@
 							item.f === selectedRoute.f &&
 							item.t === selectedRoute.t}
 						<div
-							class="group grid h-[24px] cursor-pointer grid-cols-[3fr_60px_60px] items-center gap-2 overflow-hidden rounded-md px-2 py-1 text-xs leading-none transition-all duration-200 select-none md:grid-cols-[4fr_50px_90px] md:gap-1"
-							class:bg-primary/10={isSelected}
-							class:border={isSelected}
-							class:border-primary/30={isSelected}
-							class:shadow-sm={isSelected}
-							class:hover:bg-muted={!isSelected}
+							class="group grid h-[24px] cursor-pointer grid-cols-[3fr_60px_60px] items-center gap-2 overflow-hidden rounded-md px-2 py-1 text-xs leading-none transition-all duration-200 select-none md:grid-cols-[4fr_50px_90px] md:gap-1 {isSelected ? 'bg-primary/10 border border-primary/30 shadow-sm' : 'hover:bg-muted'}"
 							onclick={() => handleItemClick(item)}
 							onmouseenter={(e) => !isMobile.current && handleMouseEnter(e, item)}
 							onmouseleave={() => !isMobile.current && handleMouseLeave()}
