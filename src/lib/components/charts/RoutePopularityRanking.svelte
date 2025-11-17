@@ -106,7 +106,7 @@
 	<div
 		class="sticky top-4 z-10 mb-4 grid grid-cols-1 gap-3 rounded-lg border border-border/50 bg-background/95 p-4 backdrop-blur-sm shadow-sm md:static md:grid-cols-[auto_1fr_auto_1fr_auto] md:items-center md:gap-4 md:bg-muted/30 md:p-5 md:backdrop-blur-none"
 	>
-		<label class="text-sm font-medium text-muted-foreground md:whitespace-nowrap">From</label>
+		<span class="text-sm font-medium text-muted-foreground md:whitespace-nowrap">From</span>
 		<Popover.Root bind:open={fromPopoverOpen}>
 			<Popover.Trigger bind:ref={fromTriggerRef}>
 				{#snippet child({ props })}
@@ -121,7 +121,7 @@
 						<span class="truncate font-medium">
 							{fromSelectedLabel || 'Select station...'}
 						</span>
-						<ChevronsUpDownIcon class="ml-2 h-4 w-4 flex-shrink-0 opacity-50 transition-transform" class:rotate-180={fromPopoverOpen} />
+						<ChevronsUpDownIcon class="ml-2 h-4 w-4 flex-shrink-0 opacity-50 transition-transform {fromPopoverOpen ? 'rotate-180' : ''}" />
 					</Button>
 				{/snippet}
 			</Popover.Trigger>
@@ -157,7 +157,7 @@
 
 		<ArrowRight class="hidden h-5 w-5 text-muted-foreground md:block" />
 
-		<label class="text-sm font-medium text-muted-foreground md:whitespace-nowrap">To</label>
+		<span class="text-sm font-medium text-muted-foreground md:whitespace-nowrap">To</span>
 		<div class="flex items-center gap-2 md:contents">
 			<Popover.Root bind:open={toPopoverOpen}>
 				<Popover.Trigger bind:ref={toTriggerRef}>
@@ -173,7 +173,7 @@
 							<span class="truncate font-medium">
 								{toSelectedLabel || 'Select station...'}
 							</span>
-							<ChevronsUpDownIcon class="ml-2 h-4 w-4 flex-shrink-0 opacity-50 transition-transform" class:rotate-180={toPopoverOpen} />
+							<ChevronsUpDownIcon class="ml-2 h-4 w-4 flex-shrink-0 opacity-50 transition-transform {toPopoverOpen ? 'rotate-180' : ''}" />
 						</Button>
 					{/snippet}
 				</Popover.Trigger>
